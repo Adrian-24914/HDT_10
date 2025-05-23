@@ -7,6 +7,7 @@ public class Main {
         Grafo grafo = new Grafo();
 
         // Leer el archivo logistica.txt usando try-with-resources
+        System.out.println("Directorio de trabajo actual: " + System.getProperty("user.dir"));
         try (Scanner file = new Scanner(new File("logistica.txt"))) {
             while (file.hasNext()) {
                 String origen = file.next();
@@ -40,7 +41,7 @@ public class Main {
 
                 // Verifica si lo ingresado es un entero
                 if (!sc.hasNextInt()) {
-                    System.out.println("❌ Opción inválida. Debe ingresar un número.");
+                    System.out.println("❌ NUH UH! Opción inválida. Debe ingresar un número.");
                     sc.nextLine(); // limpia el buffer
                     continue;
                 }
@@ -81,7 +82,7 @@ public class Main {
                         System.out.println("a. Interrupción de tráfico");
                         System.out.println("b. Nueva conexión");
                         System.out.println("c. Cambiar clima");
-                        System.out.print("Seleccione una subopción: ");
+                        System.out.print("Seleccione una opción: ");
                         String subop = sc.nextLine().trim().toLowerCase();
 
                         switch (subop) {
@@ -129,7 +130,7 @@ public class Main {
                         }
                         floyd.aplicar(grafo.getMatriz(climaActual)); // Recalcular rutas
                     }
-                    case 4 -> System.out.println("👋 Finalizando programa...");
+                    case 4 -> System.out.println("👋 Orale, finalizando programa...");
                     default -> System.out.println("❌ Opción no válida. Intente de nuevo.");
                 }
             }
